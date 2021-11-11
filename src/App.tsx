@@ -4,7 +4,7 @@ import * as S from './App.styles';
 import { Item } from './types/Item';
 import { categories } from './data/categories';
 import { items } from './data/items';
-import { getCurrentMonth, filterListByMonth } from './helpers/dateFilter';
+import * as DF from './helpers/dateFilter';
 import { TableArea } from './components/TableArea';
 import { InfoArea } from './components/InfoArea';
 import { InputArea } from './components/InputArea';
@@ -12,12 +12,12 @@ import { InputArea } from './components/InputArea';
 const App = () => {
   const [list, setList] = useState(items);
   const [filteredList, setFilteredList] = useState<Item[]>([]);
-  const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
+  const [currentMonth, setCurrentMonth] = useState(DF.getCurrentMonth());
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
 
   useEffect(() => {
-    setFilteredList(filterListByMonth(list, currentMonth));
+    setFilteredList(DF.filterListByMonth(list, currentMonth));
   }, [list, currentMonth]);
 
   useEffect(() => {

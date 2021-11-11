@@ -33,8 +33,8 @@ export const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props
                 <S.MonthArrow onClick={handleNextMonth}>➡️</S.MonthArrow>
             </S.MonthArea>
             <S.ResumeArea>
-                <ResumeItem title="Receitas" value={income} />
-                <ResumeItem title="Despesas" value={expense} />
+                <ResumeItem title="Receitas" value={income} color={'green'} />
+                <ResumeItem title="Despesas" value={expense} color={'red'} />
                 <ResumeItem
                     title="Balanço"
                     value={income - expense}

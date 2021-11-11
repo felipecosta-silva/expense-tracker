@@ -77,10 +77,14 @@ export const InputArea = ({ onAdd }: Props) => {
         <S.InputTitle>Valor</S.InputTitle>
         <S.Input type="number" value={valueField} onChange={e => setValueField(parseFloat(e.target.value))} />
       </S.InputLabel>
-      <S.InputLabel>
+      <S.InputLabelButton>
         <S.InputTitle>&nbsp;</S.InputTitle>
-        <S.Button onClick={handleAddEvent}>Adicionar</S.Button>
-      </S.InputLabel>
+        <S.ButtonAdd onClick={handleAddEvent}>Adicionar</S.ButtonAdd>
+      </S.InputLabelButton>
+      <S.InputLabelButton>
+        <S.InputTitle>&nbsp;</S.InputTitle>
+        <S.ButtonClear onClick={clearFields}>Limpar</S.ButtonClear>
+      </S.InputLabelButton>
     </S.Container>
   );
 }
